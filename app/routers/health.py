@@ -4,8 +4,13 @@ Health check endpoints router
 from fastapi import APIRouter, HTTPException, status
 from datetime import datetime
 import logging
+import sys
+import os
 
-from ..database import get_todo_count
+# Add parent directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from database import get_todo_count
 
 logger = logging.getLogger(__name__)
 
@@ -59,7 +64,7 @@ async def health_check():
     General health check endpoint
     Returns application status and configuration
     """
-    from ..config import Config
+    from config import Config
     
     logger.debug("Health check called")
     return {

@@ -4,10 +4,10 @@ import logging
 import os
 import sys
 
-from .config import Config
-from .models import TodoCreate
-from . import database
-from .routers import health_router, todos_router, root_router
+from config import Config
+from models import TodoCreate
+import database
+from routers import health_router, todos_router, root_router
 
 # ============================================================================
 # LOGGING CONFIGURATION

@@ -5,10 +5,15 @@ from fastapi import APIRouter, HTTPException, status
 from typing import List
 from datetime import datetime
 import logging
+import sys
+import os
 
-from ..models import Todo, TodoCreate, TodoUpdate
-from ..config import Config
-from .. import database
+# Add parent directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from models import Todo, TodoCreate, TodoUpdate
+from config import Config
+import database
 
 logger = logging.getLogger(__name__)
 

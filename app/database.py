@@ -1,6 +1,6 @@
 from typing import List
 from datetime import datetime
-from .models import Todo, TodoCreate
+from models import Todo, TodoCreate
 
 
 # In-memory storage
